@@ -25,4 +25,12 @@ public class GroupingService {
             }
         return new ArrayList<>(groupMap.values());
     }
+
+    public void updateGroupName(int id, String name) {
+        groupMap.get(id).setName(name);
+    }
+
+    public List<Group> getGroupLists() {
+        return new ArrayList<>(groupMap.values());
+    }
 }
