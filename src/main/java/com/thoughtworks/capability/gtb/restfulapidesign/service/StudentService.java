@@ -1,5 +1,7 @@
-package com.thoughtworks.capability.gtb.restfulapidesign;
+package com.thoughtworks.capability.gtb.restfulapidesign.service;
 
+import com.thoughtworks.capability.gtb.restfulapidesign.model.Gender;
+import com.thoughtworks.capability.gtb.restfulapidesign.model.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

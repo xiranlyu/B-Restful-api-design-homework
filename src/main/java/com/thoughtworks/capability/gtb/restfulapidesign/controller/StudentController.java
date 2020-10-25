@@ -1,5 +1,8 @@
-package com.thoughtworks.capability.gtb.restfulapidesign;
+package com.thoughtworks.capability.gtb.restfulapidesign.controller;
 
+import com.thoughtworks.capability.gtb.restfulapidesign.service.StudentService;
+import com.thoughtworks.capability.gtb.restfulapidesign.model.Gender;
+import com.thoughtworks.capability.gtb.restfulapidesign.model.Student;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

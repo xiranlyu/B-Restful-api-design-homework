@@ -1,5 +1,7 @@
-package com.thoughtworks.capability.gtb.restfulapidesign;
+package com.thoughtworks.capability.gtb.restfulapidesign.controller;
 
+import com.thoughtworks.capability.gtb.restfulapidesign.service.GroupingService;
+import com.thoughtworks.capability.gtb.restfulapidesign.model.Group;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
