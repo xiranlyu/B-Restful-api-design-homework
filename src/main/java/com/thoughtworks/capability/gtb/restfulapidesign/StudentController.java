@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/students")
 public class StudentController {
     private final StudentService studentService;
 
@@ -13,29 +14,29 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @RequestMapping(value = "/students", method = RequestMethod.POST)
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createStudent(@RequestBody Student student) {
         studentService.createStudent(student);
     }
 
-    @RequestMapping(value = "/students/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteStudent(@PathVariable int id) {
         studentService.deleteStudentById(id);
     }
 
-    @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/{id}")
     public Student getStudent(@PathVariable int id) {
         return studentService.getStudent(id);
     }
 
-    @RequestMapping(value = "/students", method = RequestMethod.GET)
+    @GetMapping
     public List<Student> getAllStudents (@RequestParam(name = "gender", required = false) Gender gender) {
         return studentService.getAllStudents(gender);
     }
 
-    @RequestMapping(value = "/students/{id}", method = RequestMethod.PATCH)
+    @PatchMapping(value = "/{id}")
     public void updateStudent(@RequestParam(name = "gender", required = false) Gender gender,
                               @RequestParam(name = "name", required = false) String name,
                               @RequestParam(name = "note", required = false) String note,
