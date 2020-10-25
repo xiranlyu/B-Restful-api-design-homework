@@ -20,6 +20,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/students/{id}", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteStudent(@PathVariable int id) {
         studentService.deleteStudentById(id);
     }
@@ -30,8 +31,15 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/students", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
     public List<Student> getAllStudents (@RequestParam(name = "gender", required = false) Gender gender) {
         return studentService.getAllStudents(gender);
+    }
+
+    @RequestMapping(value = "/students/{id}", method = RequestMethod.PATCH)
+    public void updateStudent(@RequestParam(name = "gender", required = false) Gender gender,
+                              @RequestParam(name = "name", required = false) String name,
+                              @RequestParam(name = "note", required = false) String note,
+                              @PathVariable int id) {
+        studentService.updateStudent(id, gender, name, note);
     }
 }

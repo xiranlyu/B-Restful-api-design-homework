@@ -37,4 +37,16 @@ public class StudentService {
     public Student getStudent(int id) {
         return studentMap.get(id);
     }
+
+    public void updateStudent(int id, Gender gender, String name, String note) {
+        if (gender != null) {
+            studentMap.get(id).setGender(gender);
+        }
+        if (name != null) {
+            studentMap.get(id).setName(name);
+        }
+        if (note != null) {
+            studentMap.get(id).setNote(note);
+        }
+    }
 }
